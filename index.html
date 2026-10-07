@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TANI PURE | Direct Indonesian Natural Commodities Exporter</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        corp: {
+                            900: '#071611',
+                            800: '#0B231B',
+                            700: '#14382C',
+                            bronze: '#C5A059',
+                            bronzelight: '#DFBE7C',
+                            surface: '#FDFBF7',
+                            border: '#E8E5DF'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #FDFBF7; }
+        .font-editorial { font-family: 'Cormorant Garamond', serif; }
+        .bronze-gradient {
+            background: linear-gradient(135deg, #DFBE7C 0%, #C5A059 50%, #9B7833 100%);
+        }
+        .hero-pattern {
+            background-color: #071611;
+            background-image: radial-gradient(#14382C 0.75px, transparent 0.75px), radial-gradient(#14382C 0.75px, #071611 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+        }
+    </style>
+</head>
+<body class="text-gray-900 antialiased selection:bg-corp-bronze selection:text-corp-900">
+
+    <!-- TOP COMPLIANCE & ACCREDITATION TICKER -->
+    <div class="bg-corp-900 text-gray-400 text-[11px] font-medium tracking-wider border-b border-white/5 py-2 px-4 hidden sm:block">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-6">
+                <span><i class="fa-solid fa-shield-check text-corp-bronze mr-1.5"></i> <span data-i18n="top-reg">Export Reg: NIB & NPWP Verified</span></span>
+                <span><i class="fa-solid fa-check-double text-corp-bronze mr-1.5"></i> <span data-i18n="top-lab">Verified Lot Benchmarks</span></span>
+                <span><i class="fa-solid fa-ship text-corp-bronze mr-1.5"></i> <span data-i18n="top-port">Direct Loading: IDTPP (Jakarta) & Ex-Warehouse</span></span>
+            </div>
+            <div class="flex items-center gap-4 text-gray-300">
+                <a href="mailto:export@amp-exporting.com" class="hover:text-corp-bronze transition"><i class="fa-solid fa-envelope mr-1 text-corp-bronze"></i> export@amp-exporting.com</a>
+                <span class="text-gray-600">|</span>
+                <span class="text-corp-bronzelight" data-i18n="top-incoterm">Incoterms 2020: FOB • CIF • CFR</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-corp-border text-corp-900 shadow-xs transition-colors duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            
+            <a href="#" class="flex items-center gap-4 group">
+                <div class="h-16 sm:h-20 w-auto flex items-center justify-center">
+                    <img src="brand.png" alt="TANI PURE Logo" class="h-full w-auto object-contain transition-transform duration-200 group-hover:scale-105">
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-editorial text-2xl sm:text-3xl tracking-wider text-corp-900 font-bold leading-tight">TANI PURE</span>
+                    <span class="text-[9px] sm:text-[10px] text-corp-bronze tracking-[0.25em] uppercase font-semibold">Direct Harvest • Indonesia</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-widest text-gray-700">
+                <a href="#about" class="hover:text-corp-bronze transition" data-i18n="nav-about">Corporate Overview</a>
+                <a href="#products" class="hover:text-corp-bronze transition" data-i18n="nav-products">Commodities Portfolio</a>
+                <a href="#quality" class="hover:text-corp-bronze transition" data-i18n="nav-quality">Testing & Compliance</a>
+                <a href="#rfq" class="hover:text-corp-bronze transition" data-i18n="nav-btn-rfq">Request Quotation</a>
+            </nav>
+
+            <!-- Language & Action Buttons -->
+            <div class="flex items-center gap-4">
+                <div class="inline-flex rounded-lg border border-gray-200 p-1 bg-gray-50 text-xs font-bold">
+                    <button id="lang-en" onclick="setLanguage('en')" class="px-2.5 py-1 rounded bg-corp-bronze text-corp-900 shadow-xs transition">EN</button>
+                    <button id="lang-id" onclick="setLanguage('id')" class="px-2.5 py-1 rounded text-gray-500 hover:text-corp-900 transition">ID</button>
+                </div>
+                <a href="#rfq" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bronze-gradient text-corp-900 text-xs font-extrabold uppercase tracking-wider shadow-md hover:brightness-105 transition">
+                    <span data-i18n="nav-btn-rfq">Request Quotation</span>
+                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative hero-pattern text-white min-h-[80vh] flex items-center overflow-hidden py-20 border-b border-corp-bronze/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7">
+                    <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-corp-bronze/10 border border-corp-bronze/30 text-corp-bronzelight text-xs font-semibold tracking-wider uppercase mb-6">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span data-i18n="hero-badge">Direct Indonesian Origin • Ethical Commodities</span>
+                    </div>
+                    
+                    <h1 class="font-editorial text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.08] text-white mb-6">
+                        <span data-i18n="hero-title-prefix">Direct Origin Harvest in</span> <span class="italic text-corp-bronzelight font-normal" data-i18n="hero-title-highlight">Natural Commodities.</span>
+                    </h1>
+                    
+                    <p class="text-gray-300 text-sm sm:text-base max-w-xl font-normal leading-relaxed mb-8" data-i18n="hero-sub">
+                        Supplying international procurement desks and manufacturers directly with high-density Coconut Charcoal Briquettes and natural cured Indonesian Planifolia Vanilla Beans.
+                    </p>
+
+                    <div class="flex flex-wrap items-center gap-4">
+                        <a href="#rfq" class="px-7 py-3.5 rounded-lg bronze-gradient text-corp-900 font-extrabold text-xs uppercase tracking-wider shadow-xl hover:scale-[1.02] transition" data-i18n="hero-btn-rfq">
+                            Submit Purchase Tender (RFQ)
+                        </a>
+                        <a href="#products" class="px-7 py-3.5 rounded-lg border border-corp-bronze/40 hover:bg-white/5 text-white font-bold text-xs uppercase tracking-wider transition" data-i18n="hero-btn-specs">
+                            View Product Specs
+                        </a>
+                    </div>
+
+                    <!-- Metrics Strip -->
+                    <div class="grid grid-cols-3 gap-6 mt-14 pt-8 border-t border-white/10 max-w-lg">
+                        <div>
+                            <div class="font-editorial text-3xl font-medium text-corp-bronzelight">100%</div>
+                            <div class="text-[11px] text-gray-400 uppercase tracking-wider mt-1" data-i18n="stat-1">Direct Origin Source</div>
+                        </div>
+                        <div>
+                            <div class="font-editorial text-3xl font-medium text-corp-bronzelight">COA</div>
+                            <div class="text-[11px] text-gray-400 uppercase tracking-wider mt-1" data-i18n="stat-2">Batch Verification</div>
+                        </div>
+                        <div>
+                            <div class="font-editorial text-3xl font-medium text-corp-bronzelight">12h</div>
+                            <div class="text-[11px] text-gray-400 uppercase tracking-wider mt-1" data-i18n="stat-3">Trade Desk Response</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Showcase Cards (2 Products Featured) -->
+                <div class="lg:col-span-5 relative">
+                    <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl space-y-4">
+                        
+                        <div class="flex items-center justify-between pb-4 border-b border-white/10">
+                            <div>
+                                <span class="text-[10px] text-corp-bronzelight uppercase font-bold tracking-widest" data-i18n="hero-card1-tag">Featured Commodity 01</span>
+                                <h4 class="font-editorial text-xl text-white" data-i18n="hero-card1-title">Coconut Charcoal Briquettes</h4>
+                            </div>
+                            <span class="text-xs bg-corp-bronze/20 text-corp-bronzelight px-2.5 py-1 rounded font-mono">Ash 2.0-2.1% | 25mm</span>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-corp-bronzelight uppercase font-bold tracking-widest" data-i18n="hero-card2-tag">Featured Commodity 02</span>
+                                <h4 class="font-editorial text-xl text-white" data-i18n="hero-card2-title">Planifolia Vanilla Beans</h4>
+                            </div>
+                            <span class="text-xs bg-corp-bronze/20 text-corp-bronzelight px-2.5 py-1 rounded font-mono">Vanillin ≥ 1.8% - 2.2%</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-20 bg-white border-b border-corp-border">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <span class="text-xs font-bold text-corp-bronze tracking-widest uppercase" data-i18n="about-subtitle">Direct Indonesian Exporter</span>
+            <h2 class="font-editorial text-3xl sm:text-4xl text-corp-900 mt-2 mb-6" data-i18n="about-title">
+                Reliable Trade Partnerships from Indonesian Origin to Global Markets
+            </h2>
+            <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-6" data-i18n="about-text-1">
+                TANI PURE operates with a straightforward commercial focus: connecting vetted Indonesian agricultural producers and processors directly to international commercial buyers. We streamline the export process, prioritizing absolute transaction transparency, verified specifications, and dependable ocean logistics.
+            </p>
+            <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-8" data-i18n="about-text-2">
+                Across our expanding portfolio of origin-sourced commodities and derivatives, we deliver verified consistency and reliable contract fulfillment in every consignment.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-100">
+                    <i class="fa-solid fa-shield-halved text-corp-bronze text-xl mt-1"></i>
+                    <div>
+                        <h4 class="font-bold text-sm text-corp-900" data-i18n="about-f1-title">Batch Verification</h4>
+                        <p class="text-xs text-gray-500 mt-0.5" data-i18n="about-f1-desc">Third-party lab COA provided for certified charcoal consignments.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-100">
+                    <i class="fa-solid fa-truck-fast text-corp-bronze text-xl mt-1"></i>
+                    <div>
+                        <h4 class="font-bold text-sm text-corp-900" data-i18n="about-f2-title">Direct Terminal Dispatch</h4>
+                        <p class="text-xs text-gray-500 mt-0.5" data-i18n="about-f2-desc">Container departures from Port of Tanjung Priok & Direct Ex-Warehouse.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMMODITY PRODUCTS -->
+    <section id="products" class="py-24 bg-corp-surface border-b border-corp-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-corp-border">
+                <div>
+                    <span class="text-xs font-bold text-corp-bronze uppercase tracking-[0.25em]" data-i18n="prod-subtitle">Export Catalog</span>
+                    <h2 class="font-editorial text-4xl sm:text-5xl text-corp-900 mt-2" data-i18n="prod-title">Featured Indonesian Commodities</h2>
+                </div>
+                <p class="text-sm text-gray-600 max-w-md mt-4 md:mt-0" data-i18n="prod-desc">
+                    Explore standard export specifications below. Detailed specification sheets and procurement tenders available upon request.
+                </p>
+            </div>
+
+            <!-- PRODUCT 1: COCONUT CHARCOAL BRIQUETTES -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white p-8 sm:p-10 rounded-2xl border border-corp-border shadow-sm mb-12">
+                <div class="lg:col-span-4 aspect-4/3 rounded-xl overflow-hidden bg-corp-800 relative">
+                    <img src="charcoal1.jpg" alt="TANI PURE Coconut Charcoal Briquettes" class="w-full h-full object-cover">
+                    <span class="absolute top-3 left-3 bg-corp-900/90 text-corp-bronzelight text-[10px] font-bold px-3 py-1 rounded uppercase tracking-wider">
+                        100% Coconut Shell
+                    </span>
+                </div>
+                <div class="lg:col-span-8 space-y-5">
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                        <div>
+                            <span class="text-xs text-corp-bronze font-bold uppercase tracking-wider">HS Code: 4402.90</span>
+                            <h3 class="font-editorial text-3xl font-bold text-corp-900" data-i18n="p1-title">Coconut Shell Charcoal Briquettes (25x25x25 mm Cubes)</h3>
+                        </div>
+                        <span class="text-xs bg-emerald-50 text-emerald-800 border border-emerald-200 px-3 py-1 rounded-full font-semibold" data-i18n="p1-badge">
+                            Batch Lab COA Verified
+                        </span>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed" data-i18n="p1-desc">
+                        High-density cube briquettes made from 100% carbonized Indonesian coconut shells. Zero fillers, odorless burn, and minimal ash designed for premium shisha lounges and wholesale buyers.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 py-3 bg-gray-50 rounded-xl p-4 text-xs">
+                        <div>
+                            <span class="text-gray-400 block uppercase text-[10px] font-bold" data-i18n="p1-spec1-label">Ash Content</span>
+                            <span class="font-bold text-gray-900" data-i18n="p1-spec1-val">Max 2.0% - 2.1%</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block uppercase text-[10px] font-bold" data-i18n="p1-spec2-label">Fixed Carbon</span>
+                            <span class="font-bold text-gray-900">&gt; 75.0% - 80.0%</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block uppercase text-[10px] font-bold" data-i18n="p1-spec3-label">Burn Duration</span>
+                            <span class="font-bold text-gray-900">90 - 120+ Minutes</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block uppercase text-[10px] font-bold" data-i18n="p1-spec4-label">Cube Dimensions</span>
+                            <span class="font-bold text-gray-900">25 x 25 x 25 mm</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <button onclick="openSpecModal('charcoal')" class="px-5 py-2.5 rounded-lg border border-corp-900 text-corp-900 hover:bg-corp-900 hover:text-white text-xs font-bold uppercase tracking-wider transition" data-i18n="btn-spec-charcoal">
+                            View Specification Sheet
+                        </button>
+                        <a href="#rfq" onclick="preselectRFQ('Coconut Charcoal Briquettes')" class="px-5 py-2.5 rounded-lg bronze-gradient text-corp-900 text-xs font-extrabold uppercase tracking-wider shadow-sm hover:brightness-110 transition" data-i18n="btn-sample-charcoal">
+                            Inquire Order (3 Containers Alloc.)
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 2: PLANIFOLIA VANILLA BEANS -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white p-8 sm:p-10 rounded-2xl border border-corp-border shadow-sm">
+                <div class="lg:col-span-4 aspect-4/3 rounded-xl overflow-hidden bg-corp-800 relative">
+                    <img src="vanila2.jpg" alt="TANI PURE Vanilla Beans" class="w-full h-full object-cover">
+                    <span class="absolute top-3 left-3 bg-corp-900/90 text-corp-bronzelight text-[10px] font-bold px-3 py-1 rounded uppercase tracking-wider">
+                        Grade B • Extraction
+                    </span>
+                </div>
+                <div class="lg:col-span-8 space-y-5">
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                        <div>
+                            <span class="text-xs text-corp-bronze font-bold uppercase tracking-wider">HS Code: 0905.10</span>
+                            <h3 class="font-editorial text-3xl font-bold text-corp-900" data-i18n="p2-title">Indonesian Planifolia Vanilla Beans</h3>
+                        </div>
+                        <span class="text-xs bg-amber-50 text-amber-800 border border-amber-200 px-3 py-1 rounded-full font-semibold" data-i18n="p2-badge">
+                            Natural Farm Grade
+                        </span>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed" data-i18n="p2-desc">
+                        Authentic cured Indonesian Planifolia vanilla beans. Hand-harvested and sun-sweat dried, offering full aroma ideal for extract processing and commercial culinary applications.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 py-3 bg-gray-50 rounded-xl p-4 text-xs">
+                        <div>
+                            <span class="text-gray-400 block uppercase text-[10px] font-bold" data-i18n="p2-spec1-label">Vanillin Content</span>
+                            <span class="font-bold text-gray-900">≥ 1.8% - 2.2%</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block uppercase text-[10px] font-bold" data-i18n="p2-spec2-label">Moisture Range</span>
+                            <span class="font-bold text-gray-900">20% - 25%</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block uppercase text-[10px] font-bold" data-i18n="p2-spec3-label">Pod Length</span>
+                            <span class="font-bold text-gray-900">16 cm - 20 cm+</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block uppercase text-[10px] font-bold" data-i18n="p2-spec4-label">Packaging</span>
+                            <span class="font-bold text-gray-900">Vacuum Sealer Plastic</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <button onclick="openSpecModal('vanilla')" class="px-5 py-2.5 rounded-lg border border-corp-900 text-corp-900 hover:bg-corp-900 hover:text-white text-xs font-bold uppercase tracking-wider transition" data-i18n="btn-spec-vanilla">
+                            View Grading Sheet
+                        </button>
+                        <a href="#rfq" onclick="preselectRFQ('Indonesian Planifolia Vanilla Beans (Grade B)')" class="px-5 py-2.5 rounded-lg bronze-gradient text-corp-900 text-xs font-extrabold uppercase tracking-wider shadow-sm hover:brightness-110 transition" data-i18n="btn-sample-vanilla">
+                            Request Quote (100kg Alloc.)
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- QUALITY & EXPORT FRAMEWORK -->
+    <section id="quality" class="py-24 bg-corp-900 text-white border-b border-corp-bronze/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-corp-bronzelight uppercase tracking-[0.25em]" data-i18n="qual-subtitle">Quality & Export Framework</span>
+                <h2 class="font-editorial text-4xl sm:text-5xl mt-2 mb-4" data-i18n="qual-title">Direct Origin Verification</h2>
+                <p class="text-gray-300 text-sm" data-i18n="qual-desc">
+                    Every batch dispatched is traceable to origin and inspected under transparent cross-border trade guidelines.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-xl bg-white/5 border border-white/10 relative">
+                    <span class="font-editorial text-4xl text-corp-bronzelight/40 font-bold block mb-4">01</span>
+                    <h3 class="font-editorial text-2xl mb-2" data-i18n="qual-step1-title">Direct Origin Sourcing</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed" data-i18n="qual-step1-desc">
+                        Direct relationships with Indonesian processing facilities and producers ensuring reliable harvest quality and proper curing.
+                    </p>
+                </div>
+                <div class="p-8 rounded-xl bg-white/5 border border-white/10 relative">
+                    <span class="font-editorial text-4xl text-corp-bronzelight/40 font-bold block mb-4">02</span>
+                    <h3 class="font-editorial text-2xl mb-2" data-i18n="qual-step2-title">Specification Testing</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed" data-i18n="qual-step2-desc">
+                        Product lots are verified against strict moisture, ash, and physical dimension benchmarks before loading.
+                    </p>
+                </div>
+                <div class="p-8 rounded-xl bg-white/5 border border-white/10 relative">
+                    <span class="font-editorial text-4xl text-corp-bronzelight/40 font-bold block mb-4">03</span>
+                    <h3 class="font-editorial text-2xl mb-2" data-i18n="qual-step3-title">Terminal Dispatch</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed" data-i18n="qual-step3-desc">
+                        Full trade documentation support: Batch Lab COA for charcoal consignments, export customs registration, and port clearance.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RFQ FORM -->
+    <section id="rfq" class="py-24 bg-corp-surface">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white p-8 sm:p-12 rounded-3xl border border-corp-border shadow-xl">
+                
+                <div class="text-center mb-10">
+                    <span class="text-xs font-bold text-corp-bronze uppercase tracking-[0.25em]" data-i18n="rfq-subtitle">Direct Trade Desk</span>
+                    <h2 class="font-editorial text-3xl sm:text-4xl text-corp-900 mt-2 mb-2" data-i18n="rfq-title">Commercial RFQ & Sample Request</h2>
+                    <p class="text-xs sm:text-sm text-gray-500" data-i18n="rfq-desc">
+                        Submit your volume requirements or tender requests. Our export desk responds with detailed quotation terms within 12 business hours.
+                    </p>
+                </div>
+
+                <form id="rfqForm" onsubmit="handleRFQSubmit(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2" data-i18n="lbl-name">Full Name *</label>
+                            <input type="text" required placeholder="e.g. Robert Meyer" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-corp-bronze focus:outline-none text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2" data-i18n="lbl-company">Company Name *</label>
+                            <input type="text" required placeholder="e.g. Global Commodities B.V." class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-corp-bronze focus:outline-none text-sm">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2" data-i18n="lbl-email">Business Email *</label>
+                            <input type="email" required placeholder="procurement@company.com" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-corp-bronze focus:outline-none text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2" data-i18n="lbl-intent">Inquiry Intent *</label>
+                            <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-corp-bronze focus:outline-none text-sm bg-white">
+                                <option value="container" data-i18n="opt-intent-2">Commercial Container Tender (FCL / LCL)</option>
+                                <option value="sample" data-i18n="opt-intent-1">Request Evaluation Sample</option>
+                                <option value="oem" data-i18n="opt-intent-3">OEM / Custom Packing Inquiry</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2" data-i18n="lbl-commodity">Commodity *</label>
+                            <select id="rfqProductSelect" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-corp-bronze focus:outline-none text-sm bg-white">
+                                <option value="Coconut Charcoal Briquettes" data-i18n="opt-prod-1">Coconut Charcoal Briquettes</option>
+                                <option value="Indonesian Planifolia Vanilla Beans (Grade B)" data-i18n="opt-prod-2">Indonesian Planifolia Vanilla Beans (Grade B)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2" data-i18n="lbl-qty">Volume / Quantity</label>
+                            <input type="text" placeholder="e.g. 1x20ft FCL or 100 kg" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-corp-bronze focus:outline-none text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2" data-i18n="lbl-port">Destination Port</label>
+                            <input type="text" placeholder="e.g. Rotterdam, Hamburg, Jebel Ali" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-corp-bronze focus:outline-none text-sm">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2" data-i18n="lbl-msg">Custom Requirements / Notes</label>
+                        <textarea rows="3" placeholder="Target destination port, packaging preferences, or required Incoterms..." class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-corp-bronze focus:outline-none text-sm"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 rounded-lg bronze-gradient text-corp-900 font-extrabold uppercase tracking-widest text-xs shadow-lg hover:brightness-110 transition">
+                        <span data-i18n="btn-submit-rfq">Dispatch Sourcing Tender</span>
+                    </button>
+                </form>
+
+                <div id="rfqSuccessAlert" class="hidden mt-6 p-4 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-900 text-center text-xs font-medium">
+                    <i class="fa-solid fa-check-circle text-emerald-600 mr-1.5"></i>
+                    <span data-i18n="rfq-success">Your inquiry has been logged with the TANI PURE Trade Desk. We will respond via business email within 12 hours.</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-corp-900 text-white border-t border-corp-bronze/20 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-white/10 text-xs">
+                
+                <div class="md:col-span-1 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="h-10 w-auto flex items-center justify-center">
+                            <img src="brand.png" alt="TANI PURE" class="h-full w-auto object-contain">
+                        </div>
+                        <span class="font-editorial text-2xl text-white font-bold">TANI PURE</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed" data-i18n="foot-about">
+                        Direct-origin Indonesian exporter connecting verified natural commodities to international procurement desks.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-corp-bronzelight uppercase tracking-widest mb-4" data-i18n="foot-office-title">Export Office</h4>
+                    <p class="text-gray-300 leading-relaxed">
+                        Jakarta & Banten Trade Operations<br>
+                        Republic of Indonesia<br>
+                        Email: export@amp-exporting.com
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-corp-bronzelight uppercase tracking-widest mb-4" data-i18n="foot-ports-title">Dispatch Terminals</h4>
+                    <p class="text-gray-300 leading-relaxed" data-i18n="foot-ports-desc">
+                        • Port of Tanjung Priok, Jakarta (IDTPP)<br>
+                        • Direct Ex-Warehouse Loading<br>
+                        Ocean container & air freight available.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-corp-bronzelight uppercase tracking-widest mb-4" data-i18n="foot-legal-title">Legal Verification</h4>
+                    <p class="text-gray-400 leading-relaxed" data-i18n="foot-legal-desc">
+                        NIB (Nomor Induk Berusaha), NPWP Tax ID, and standard commercial clearance documentation provided with verified consignments.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-gray-500">
+                <div>&copy; 2026 TANI PURE. All Rights Reserved.</div>
+                <div class="flex gap-4">
+                    <span data-i18n="foot-privacy">Privacy Policy</span>
+                    <span data-i18n="foot-terms">General Terms of Sale</span>
+                    <span data-i18n="foot-compliance">Export Compliance</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- TECHNICAL SPECIFICATION MODAL -->
+    <div id="specModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+        <div class="max-w-2xl w-full bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
+            <div class="bg-corp-900 text-white p-6 flex justify-between items-center border-b border-corp-bronze/20">
+                <div>
+                    <h3 id="modalProductTitle" class="font-editorial text-2xl text-corp-bronzelight font-bold">Specification Sheet</h3>
+                    <p id="modalProductSub" class="text-xs text-gray-300">TANI PURE Verified Benchmark</p>
+                </div>
+                <button onclick="closeSpecModal()" class="text-gray-400 hover:text-white text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div id="modalSpecContent" class="p-6 max-h-[70vh] overflow-y-auto text-xs space-y-4"></div>
+            <div class="bg-gray-50 p-4 border-t border-gray-200 flex justify-end gap-3" id="modalFooterActions">
+                <button onclick="closeSpecModal()" class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 text-xs font-bold" data-i18n="btn-modal-close">Close</button>
+                <a id="modalActionBtn" href="#rfq" onclick="closeSpecModal()" class="px-4 py-2 rounded-lg bronze-gradient text-corp-900 text-xs font-bold" data-i18n="btn-modal-action">Request Quotation</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- BILINGUAL TRANSLATION & LOGIC ENGINE -->
+    <script>
+        const translations = {
+            en: {
+                "top-reg": "Export Reg: NIB & NPWP Verified",
+                "top-lab": "Verified Lot Benchmarks",
+                "top-port": "Direct Loading: IDTPP (Jakarta) & Ex-Warehouse",
+                "top-incoterm": "Incoterms 2020: FOB • CIF • CFR",
+                "nav-about": "Corporate Overview",
+                "nav-products": "Commodities Portfolio",
+                "nav-quality": "Testing & Compliance",
+                "nav-btn-rfq": "Request Quotation",
+                "hero-badge": "Direct Indonesian Origin • Ethical Commodities",
+                "hero-title-prefix": "Direct Origin Harvest in",
+                "hero-title-highlight": "Natural Commodities.",
+                "hero-sub": "Supplying international procurement desks and manufacturers directly with high-density Coconut Charcoal Briquettes and natural cured Indonesian Planifolia Vanilla Beans.",
+                "hero-btn-rfq": "Submit Purchase Tender (RFQ)",
+                "hero-btn-specs": "View Product Specs",
+                "stat-1": "Direct Origin Source",
+                "stat-2": "Batch Verification",
+                "stat-3": "Trade Desk Response",
+                "hero-card1-tag": "Featured Commodity 01",
+                "hero-card1-title": "Coconut Charcoal Briquettes",
+                "hero-card2-tag": "Featured Commodity 02",
+                "hero-card2-title": "Planifolia Vanilla Beans",
+                "about-subtitle": "Direct Indonesian Exporter",
+                "about-title": "Reliable Trade Partnerships from Indonesian Origin to Global Markets",
+                "about-text-1": "TANI PURE operates with a straightforward commercial focus: connecting vetted Indonesian agricultural producers and processors directly to international commercial buyers. We streamline the export process, prioritizing absolute transaction transparency, verified specifications, and dependable ocean logistics.",
+                "about-text-2": "Across our expanding portfolio of origin-sourced commodities and derivatives, we deliver verified consistency and reliable contract fulfillment in every consignment.",
+                "about-f1-title": "Batch Verification",
+                "about-f1-desc": "Third-party lab COA provided for certified charcoal consignments.",
+                "about-f2-title": "Direct Terminal Dispatch",
+                "about-f2-desc": "Container departures from Port of Tanjung Priok & Direct Ex-Warehouse.",
+                "prod-subtitle": "Export Catalog",
+                "prod-title": "Featured Indonesian Commodities",
+                "prod-desc": "Explore standard export specifications below. Detailed specification sheets and procurement tenders available upon request.",
+                "p1-title": "Coconut Shell Charcoal Briquettes (25x25x25 mm Cubes)",
+                "p1-badge": "Batch Lab COA Verified",
+                "p1-desc": "High-density cube briquettes made from 100% carbonized Indonesian coconut shells. Zero fillers, odorless burn, and minimal ash designed for premium shisha lounges and wholesale buyers.",
+                "p1-spec1-label": "Ash Content",
+                "p1-spec1-val": "Max 2.0% - 2.1%",
+                "p1-spec2-label": "Fixed Carbon",
+                "p1-spec3-label": "Burn Duration",
+                "p1-spec4-label": "Cube Dimensions",
+                "btn-spec-charcoal": "View Specification Sheet",
+                "btn-sample-charcoal": "Inquire Order (3 Containers Alloc.)",
+                "p2-title": "Indonesian Planifolia Vanilla Beans",
+                "p2-badge": "Natural Farm Grade",
+                "p2-desc": "Authentic cured Indonesian Planifolia vanilla beans. Hand-harvested and sun-sweat dried, offering full aroma ideal for extract processing and commercial culinary applications.",
+                "p2-spec1-label": "Vanillin Content",
+                "p2-spec2-label": "Moisture Range",
+                "p2-spec3-label": "Pod Length",
+                "p2-spec4-label": "Packaging",
+                "btn-spec-vanilla": "View Grading Sheet",
+                "btn-sample-vanilla": "Request Quote (100kg Alloc.)",
+                "qual-subtitle": "Quality & Export Framework",
+                "qual-title": "Direct Origin Verification",
+                "qual-desc": "Every batch dispatched is traceable to origin and inspected under transparent cross-border trade guidelines.",
+                "qual-step1-title": "Direct Origin Sourcing",
+                "qual-step1-desc": "Direct relationships with Indonesian processing facilities and producers ensuring reliable harvest quality and proper curing.",
+                "qual-step2-title": "Specification Testing",
+                "qual-step2-desc": "Product lots are verified against strict moisture, ash, and physical dimension benchmarks before loading.",
+                "qual-step3-title": "Terminal Dispatch",
+                "qual-step3-desc": "Full trade documentation support: Batch Lab COA for charcoal consignments, export customs registration, and port clearance.",
+                "rfq-subtitle": "Direct Trade Desk",
+                "rfq-title": "Commercial RFQ & Sample Request",
+                "rfq-desc": "Submit your volume requirements or tender requests. Our export desk responds with detailed quotation terms within 12 business hours.",
+                "lbl-name": "Full Name *",
+                "lbl-company": "Company Name *",
+                "lbl-email": "Business Email *",
+                "lbl-intent": "Inquiry Intent *",
+                "opt-intent-1": "Request Evaluation Sample",
+                "opt-intent-2": "Commercial Container Tender (FCL / LCL)",
+                "opt-intent-3": "OEM / Custom Packing Inquiry",
+                "lbl-commodity": "Commodity *",
+                "opt-prod-1": "Coconut Charcoal Briquettes",
+                "opt-prod-2": "Indonesian Planifolia Vanilla Beans (Grade B)",
+                "lbl-qty": "Volume / Quantity",
+                "lbl-port": "Destination Port",
+                "lbl-msg": "Custom Requirements / Notes",
+                "btn-submit-rfq": "Dispatch Sourcing Tender",
+                "rfq-success": "Your inquiry has been logged with the TANI PURE Trade Desk. We will respond via business email within 12 hours.",
+                "foot-about": "Direct-origin Indonesian exporter connecting verified natural commodities to international procurement desks.",
+                "foot-office-title": "Export Office",
+                "foot-ports-title": "Dispatch Terminals",
+                "foot-ports-desc": "• Port of Tanjung Priok, Jakarta (IDTPP)<br>• Direct Ex-Warehouse Loading<br>Ocean container & air freight available.",
+                "foot-legal-title": "Legal Verification",
+                "foot-legal-desc": "NIB (Nomor Induk Berusaha), NPWP Tax ID, and standard commercial clearance documentation provided with verified consignments.",
+                "foot-privacy": "Privacy Policy",
+                "foot-terms": "General Terms of Sale",
+                "foot-compliance": "Export Compliance",
+                "btn-modal-close": "Close",
+                "btn-modal-action": "Request Quotation"
+            },
+            id: {
+                "top-reg": "Reg. Ekspor: NIB & NPWP Terverifikasi",
+                "top-lab": "Tolok Ukur Lot Terverifikasi",
+                "top-port": "Pelabuhan Muat: IDTPP (Jakarta) & Ex-Warehouse",
+                "top-incoterm": "Incoterms 2020: FOB • CIF • CFR",
+                "nav-about": "Tentang Kami",
+                "nav-products": "Portofolio Komoditas",
+                "nav-quality": "Uji Mutu & Kepatuhan",
+                "nav-btn-rfq": "Minta Penawaran",
+                "hero-badge": "Asal Indonesia Langsung • Komoditas Etis",
+                "hero-title-prefix": "Panen Asli Langsung pada",
+                "hero-title-highlight": "Komoditas Alami.",
+                "hero-sub": "Memasok kebutuhan manufaktur dan industri global langsung dengan Briket Arang Kelapa berkepadatan tinggi serta Biji Vanili Planifolia Indonesia pilihan.",
+                "hero-btn-rfq": "Ajukan Permintaan Harga (RFQ)",
+                "hero-btn-specs": "Lihat Spesifikasi Produk",
+                "stat-1": "Sumber Asal Langsung",
+                "stat-2": "Verifikasi Uji Batch",
+                "stat-3": "Respon Meja Ekspor",
+                "hero-card1-tag": "Komoditas Unggulan 01",
+                "hero-card1-title": "Briket Arang Kelapa",
+                "hero-card2-tag": "Komoditas Unggulan 02",
+                "hero-card2-title": "Biji Vanili Planifolia",
+                "about-subtitle": "Eksportir Langsung Indonesia",
+                "about-title": "Kemitraan Perdagangan Tepercaya dari Indonesia ke Pasar Global",
+                "about-text-1": "TANI PURE beroperasi dengan fokus komersial yang jelas: menghubungkan produsen dan pengolah hasil bumi Indonesia yang terverifikasi langsung dengan pembeli komersial internasional. Kami mengutamakan transparansi transaksi penuh, spesifikasi terverifikasi, serta logistik yang handal.",
+                "about-text-2": "Di seluruh portofolio komoditas asal Indonesia kami, kami menjamin konsistensi kualitas teruji dan pemenuhan kontrak pasokan yang andal di setiap pengiriman.",
+                "about-f1-title": "Verifikasi Batch",
+                "about-f1-desc": "Sertifikat COA laboratorium disertakan untuk pengiriman briket arang terverifikasi.",
+                "about-f2-title": "Pemuatan Terminal Langsung",
+                "about-f2-desc": "Keberangkatan kargo dari Pelabuhan Tanjung Priok & Pemuatan Langsung Gudang.",
+                "prod-subtitle": "Katalog Ekspor",
+                "prod-title": "Komoditas Unggulan Indonesia",
+                "prod-desc": "Pelajari spesifikasi ekspor di bawah ini. Lembar spesifikasi teknis dan penawaran tersedia atas permintaan.",
+                "p1-title": "Briket Arang Tempurung Kelapa (Kubus 25x25x25 mm)",
+                "p1-badge": "Terverifikasi COA Lab Batch",
+                "p1-desc": "Briket kubus padat dari 100% tempurung kelapa tua Indonesia tanpa bahan kimia tambahan. Durasi bakar stabil dan kadar abu minimal untuk kafe shisha dan pembeli grosir.",
+                "p1-spec1-label": "Kadar Abu (Ash)",
+                "p1-spec1-val": "Maks 2.0% - 2.1%",
+                "p1-spec2-label": "Karbon Terikat",
+                "p1-spec3-label": "Durasi Bakar",
+                "p1-spec4-label": "Ukuran Kubus",
+                "btn-spec-charcoal": "Lihat Lembar Spesifikasi",
+                "btn-sample-charcoal": "Tanyakan Pesanan (Alokasi 3 Kontainer)",
+                "p2-title": "Biji Vanili Planifolia Indonesia",
+                "p2-badge": "Mutu Kebun Alami (Farm Grade)",
+                "p2-desc": "Biji vanili Planifolia asli yang dikeringkan secara alami. Dipanen secara selektif dengan aroma kuat yang ideal untuk pengolahan ekstrak dan kebutuhan kuliner komersial.",
+                "p2-spec1-label": "Kadar Vanilin",
+                "p2-spec2-label": "Kadar Air",
+                "p2-spec3-label": "Panjang Polong",
+                "p2-spec4-label": "Kemasan",
+                "btn-spec-vanilla": "Lihat Lembar Mutu",
+                "btn-sample-vanilla": "Minta Penawaran (Alokasi 100kg)",
+                "qual-subtitle": "Standar Ekspor & Mutu",
+                "qual-title": "Verifikasi Asal Panen Langsung",
+                "qual-desc": "Setiap batch pengiriman dapat ditelusuri ke sumber asal dan diproses sesuai panduan perdagangan resmi.",
+                "qual-step1-title": "Pengadaan Asal Langsung",
+                "qual-step1-desc": "Kemitraan langsung dengan fasilitas pemrosesan dan petani untuk memastikan kualitas panen dan curing terbaik.",
+                "qual-step2-title": "Pengujian Spesifikasi",
+                "qual-step2-desc": "Setiap lot diverifikasi terhadap parameter kadar air, kadar abu, dan dimensi fisik sebelum dimuat.",
+                "qual-step3-title": "Pelepasan Terminal",
+                "qual-step3-desc": "Dukungan dokumen penuh: sertifikat COA laboratorium untuk briket arang, perizinan ekspor, dan kliring pelabuhan.",
+                "rfq-subtitle": "Meja Perdagangan Ekspor",
+                "rfq-title": "Permintaan Penawaran (RFQ) & Sampel",
+                "rfq-desc": "Kirim kebutuhan kuantitas Anda. Tim meja perdagangan kami akan menanggapi dalam 12 jam kerja.",
+                "lbl-name": "Nama Lengkap *",
+                "lbl-company": "Nama Perusahaan *",
+                "lbl-email": "Email Bisnis *",
+                "lbl-intent": "Tujuan Permintaan *",
+                "opt-intent-1": "Minta Sampel Uji Coba",
+                "opt-intent-2": "Penawaran Pembelian Kontainer (FCL / LCL)",
+                "opt-intent-3": "Maklon / Pengemasan Khusus",
+                "lbl-commodity": "Komoditas Pilihan *",
+                "opt-prod-1": "Briket Arang Kelapa",
+                "opt-prod-2": "Biji Vanili Planifolia Indonesia (Grade B)",
+                "lbl-qty": "Volume / Kuantitas",
+                "lbl-port": "Pelabuhan Tujuan",
+                "lbl-msg": "Kebutuhan Khusus / Catatan",
+                "btn-submit-rfq": "Kirim Dokumen Penawaran",
+                "rfq-success": "Permintaan Anda telah tercatat pada Meja Ekspor TANI PURE. Kami akan menghubungi melalui email bisnis dalam 12 jam kerja.",
+                "foot-about": "Eksportir komoditas alami langsung Indonesia yang menghubungkan hasil bumi berkualitas ke meja pengadaan internasional.",
+                "foot-office-title": "Kantor Operasional Ekspor",
+                "foot-ports-title": "Terminal Pengiriman",
+                "foot-ports-desc": "• Pelabuhan Tanjung Priok, Jakarta (IDTPP)<br>• Pemuatan Langsung Gudang (Ex-Warehouse)<br>Melayani kontainer laut & kargo udara.",
+                "foot-legal-title": "Legalitas & Izin",
+                "foot-legal-desc": "NIB (Nomor Induk Berusaha), NPWP Badan, serta kelengkapan dokumen dagang standar pada setiap pengiriman resmi.",
+                "foot-privacy": "Kebijakan Privasi",
+                "foot-terms": "Ketentuan Umum Penjualan",
+                "foot-compliance": "Kepatuhan Ekspor",
+                "btn-modal-close": "Tutup",
+                "btn-modal-action": "Minta Penawaran"
+            }
+        };
+
+        const specDetails = {
+            charcoal: {
+                en: {
+                    title: "100% Coconut Shell Charcoal Briquettes",
+                    sub: "TANI PURE Verified Lot Specification",
+                    btnText: "Request Batch Lab COA / Quote",
+                    table: `
+                        <table class="w-full text-left border-collapse border border-gray-200 text-xs">
+                            <tr class="bg-gray-100"><th class="p-2 border font-bold">Parameter</th><th class="p-2 border font-bold">Verified Benchmark / Lot Specification</th></tr>
+                            <tr><td class="p-2 border font-medium">Cube Dimensions</td><td class="p-2 border">25 x 25 x 25 mm</td></tr>
+                            <tr><td class="p-2 border font-medium">Ash Content (%)</td><td class="p-2 border">Max 2.0% - 2.1%</td></tr>
+                            <tr><td class="p-2 border font-medium">Fixed Carbon (%)</td><td class="p-2 border">&gt; 75.0% - 80.0%</td></tr>
+                            <tr><td class="p-2 border font-medium">Burn Duration</td><td class="p-2 border">90 - 120+ Minutes</td></tr>
+                            <tr><td class="p-2 border font-medium">Packaging Format</td><td class="p-2 border">Box 1kg inner + Karton master 10kg</td></tr>
+                            <tr><td class="p-2 border font-medium">Available Allocation</td><td class="p-2 border">3 containers</td></tr>
+                            <tr><td class="p-2 border font-medium">Dispatch Terminal</td><td class="p-2 border">Port of Tanjung Priok, Jakarta (IDTPP)</td></tr>
+                            <tr><td class="p-2 border font-medium">Accompanying Documentation</td><td class="p-2 border font-bold text-emerald-700">Batch Lab COA</td></tr>
+                        </table>
+                    `
+                },
+                id: {
+                    title: "Briket Arang Tempurung Kelapa 100%",
+                    sub: "Spesifikasi Lot Terverifikasi TANI PURE",
+                    btnText: "Minta Dokumen COA Lab / Penawaran",
+                    table: `
+                        <table class="w-full text-left border-collapse border border-gray-200 text-xs">
+                            <tr class="bg-gray-100"><th class="p-2 border font-bold">Parameter</th><th class="p-2 border font-bold">Tolok Ukur / Spesifikasi Lot</th></tr>
+                            <tr><td class="p-2 border font-medium">Dimensi Kubus</td><td class="p-2 border">25 x 25 x 25 mm</td></tr>
+                            <tr><td class="p-2 border font-medium">Kadar Abu (%)</td><td class="p-2 border">Maks 2.0% - 2.1%</td></tr>
+                            <tr><td class="p-2 border font-medium">Karbon Terikat (%)</td><td class="p-2 border">&gt; 75.0% - 80.0%</td></tr>
+                            <tr><td class="p-2 border font-medium">Durasi Bakar</td><td class="p-2 border">90 - 120+ Menit</td></tr>
+                            <tr><td class="p-2 border font-medium">Kemasan</td><td class="p-2 border">Box 1kg inner + Karton master 10kg</td></tr>
+                            <tr><td class="p-2 border font-medium">Alokasi Tersedia</td><td class="p-2 border">3 kontainer</td></tr>
+                            <tr><td class="p-2 border font-medium">Pelabuhan Muat</td><td class="p-2 border">Pelabuhan Tanjung Priok, Jakarta (IDTPP)</td></tr>
+                            <tr><td class="p-2 border font-medium">Dokumen Penyerta</td><td class="p-2 border font-bold text-emerald-700">Batch Lab COA</td></tr>
+                        </table>
+                    `
+                }
+            },
+            vanilla: {
+                en: {
+                    title: "Indonesian Planifolia Vanilla Beans",
+                    sub: "TANI PURE Verified Lot Specification",
+                    btnText: "Request Procurement Quotation",
+                    table: `
+                        <table class="w-full text-left border-collapse border border-gray-200 text-xs">
+                            <tr class="bg-gray-100"><th class="p-2 border font-bold">Parameter</th><th class="p-2 border font-bold">Verified Benchmark / Lot Specification</th></tr>
+                            <tr><td class="p-2 border font-medium">Grade / Quality</td><td class="p-2 border">Grade B (Extraction Grade)</td></tr>
+                            <tr><td class="p-2 border font-medium">Pod Length</td><td class="p-2 border">16 cm - 20 cm+</td></tr>
+                            <tr><td class="p-2 border font-medium">Vanillin Content</td><td class="p-2 border">≥ 1.8% - 2.2%</td></tr>
+                            <tr><td class="p-2 border font-medium">Moisture Range</td><td class="p-2 border">20% - 25%</td></tr>
+                            <tr><td class="p-2 border font-medium">Packaging Format</td><td class="p-2 border">Vacuum Sealer Plastic</td></tr>
+                            <tr><td class="p-2 border font-medium">Available Allocation</td><td class="p-2 border">100 kg</td></tr>
+                            <tr><td class="p-2 border font-medium">Dispatch Terminal</td><td class="p-2 border">Direct Ex-Warehouse Loading</td></tr>
+                            <tr><td class="p-2 border font-medium">Accompanying Documentation</td><td class="p-2 border text-gray-500 italic">None (Natural Farm Grade)</td></tr>
+                        </table>
+                    `
+                },
+                id: {
+                    title: "Biji Vanili Planifolia Indonesia",
+                    sub: "Spesifikasi Lot Terverifikasi TANI PURE",
+                    btnText: "Minta Dokumen Penawaran",
+                    table: `
+                        <table class="w-full text-left border-collapse border border-gray-200 text-xs">
+                            <tr class="bg-gray-100"><th class="p-2 border font-bold">Parameter</th><th class="p-2 border font-bold">Tolok Ukur / Spesifikasi Lot</th></tr>
+                            <tr><td class="p-2 border font-medium">Grade / Mutu</td><td class="p-2 border">Grade B (Mutu Ekstraksi)</td></tr>
+                            <tr><td class="p-2 border font-medium">Panjang Polong</td><td class="p-2 border">16 cm - 20 cm+</td></tr>
+                            <tr><td class="p-2 border font-medium">Kadar Vanilin</td><td class="p-2 border">≥ 1.8% - 2.2%</td></tr>
+                            <tr><td class="p-2 border font-medium">Kadar Air</td><td class="p-2 border">20% - 25%</td></tr>
+                            <tr><td class="p-2 border font-medium">Kemasan</td><td class="p-2 border">Plastik Vacuum Sealer</td></tr>
+                            <tr><td class="p-2 border font-medium">Alokasi Tersedia</td><td class="p-2 border">100 kg</td></tr>
+                            <tr><td class="p-2 border font-medium">Terminal Muat</td><td class="p-2 border">Direct Ex-Warehouse Loading (Pemuatan Gudang)</td></tr>
+                            <tr><td class="p-2 border font-medium">Dokumen Penyerta</td><td class="p-2 border text-gray-500 italic">Tidak ada (Mutu Kebun Alami)</td></tr>
+                        </table>
+                    `
+                }
+            }
+        };
+
+        let currentLang = 'en';
+        let activeModalKey = null;
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            const btnEn = document.getElementById('lang-en');
+            const btnId = document.getElementById('lang-id');
+
+            if (lang === 'en') {
+                btnEn.className = 'px-2.5 py-1 rounded bg-corp-bronze text-corp-900 shadow-xs transition';
+                btnId.className = 'px-2.5 py-1 rounded text-gray-500 hover:text-corp-900 transition';
+                document.documentElement.lang = 'en';
+            } else {
+                btnId.className = 'px-2.5 py-1 rounded bg-corp-bronze text-corp-900 shadow-xs transition';
+                btnEn.className = 'px-2.5 py-1 rounded text-gray-500 hover:text-corp-900 transition';
+                document.documentElement.lang = 'id';
+            }
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    if (key === 'foot-ports-desc') {
+                        el.innerHTML = translations[lang][key];
+                    } else {
+                        el.innerText = translations[lang][key];
+                    }
+                }
+            });
+
+            if (activeModalKey && !document.getElementById('specModal').classList.contains('hidden')) {
+                openSpecModal(activeModalKey);
+            }
+        }
+
+        function preselectRFQ(productName) {
+            document.getElementById('rfqProductSelect').value = productName;
+        }
+
+        function handleRFQSubmit(e) {
+            e.preventDefault();
+            const alert = document.getElementById('rfqSuccessAlert');
+            alert.classList.remove('hidden');
+            document.getElementById('rfqForm').reset();
+            setTimeout(() => alert.classList.add('hidden'), 7000);
+        }
+
+        function openSpecModal(key) {
+            activeModalKey = key;
+            const product = specDetails[key];
+            if (product && product[currentLang]) {
+                const data = product[currentLang];
+                document.getElementById('modalProductTitle').innerText = data.title;
+                document.getElementById('modalProductSub').innerText = data.sub;
+                document.getElementById('modalSpecContent').innerHTML = data.table;
+                const modalActionBtn = document.getElementById('modalActionBtn');
+                modalActionBtn.innerText = data.btnText;
+                
+                document.getElementById('specModal').classList.remove('hidden');
+                document.getElementById('specModal').classList.add('flex');
+            }
+        }
+
+        function closeSpecModal() {
+            document.getElementById('specModal').classList.add('hidden');
+            document.getElementById('specModal').classList.remove('flex');
+            activeModalKey = null;
+        }
+    </script>
+</body>
+</html>
